@@ -1,1 +1,1 @@
-# datasciencecoursera
+# Data cleaning for Samsung dataset
