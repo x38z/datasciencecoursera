@@ -19,9 +19,9 @@
 
 ##- 'test/y_test.txt': Test labels.
 
-The following files are available for the train and test data. Their descriptions are equivalent. 
+## The following files are available for the train and test data. Their descriptions are equivalent. 
 
 ##- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 
-## The script was processing observation files x_test and x_train and was merging them with subjects and activity subsets.
-## Avarages were calculated per each activity and each subject line.
+### The script was processing observation files x_test and x_train and was merging them with subjects and activity subsets.
+### Avareges (MEAN) were calculated per each activity and each subject line for each SRD and MEAN observation.
