@@ -24,4 +24,4 @@
 ##- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 
 ### The script was processing observation files x_test and x_train and was merging them with subjects and activity subsets.
-### Avareges (MEAN) were calculated per each activity and each subject line for each SRD and MEAN observation.
+### Averages (MEAN) were calculated per each activity and each subject line for each SRD and MEAN observation.
