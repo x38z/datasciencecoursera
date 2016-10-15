@@ -32,14 +32,28 @@ colnames(activity_test)<- c("activity")
 colnames(subject_train)<- c("subject")
 colnames(subject_test)<- c("subject")
 
+activityNames <-
+  c("Walking", "Walking Upstairs", "Walking Downstairs", "Sitting", "Standing", "Laying")
+
 ## selecting only mean and std columns
 
-cleanfr_train<- cbind(obs_train[extract_features],activity_train,subject_train)
-cleanfr_test<- cbind(obs_test[extract_features],activity_test,subject_test)
+cleanfr_train<- cbind(obs_train[extract_features],activity=activityNames[activity_train$activity],subject=subject_train$subject)
+cleanfr_test<- cbind(obs_test[extract_features],activity=activityNames[activity_test$activity],subject=subject_test$subject)
 
 # merging all
 
 cleanfr<- rbind(cleanfr_train,cleanfr_test)
- final<-aggregate(x=cleanfr,by=list(cleanfr$activity,cleanfr$subject),FUN="mean")
 
- write.table(final , file = "./clean_data.txt")
+
+
+activities <- activityNames[cleanfr]
+
+
+ ##final<-aggregate(x=cleanfr,by=list(cleanfr$activity,cleanfr$subject),FUN="mean")
+
+library(plyr)
+
+final<- ddply(cleanfr, .(subject, activity), function(x) colMeans(cleanfr[-c(80,81)] ))
+
+
+ write.table(final, file = "./clean_data.txt")
